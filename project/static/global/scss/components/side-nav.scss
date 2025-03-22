@@ -1,0 +1,87 @@
+@use "global_scss" as *;
+
+
+$UNDERLINE-HEIGHT: .2rem;
+$ICON-WIDTH: 2rem;
+
+
+%side-nav {
+}
+
+
+%options {
+  @include ColumnLayout;
+}
+
+
+%option {
+  height: 3rem;
+
+  @include ColumnLayout {
+    justify-content: space-between;
+  }
+
+  @include Transition($time: 500ms);
+
+  &:hover {
+    background: rgb(24, 24, 24); 
+  }
+
+  &:hover &__underline {
+    width: 100%;
+  }
+}
+
+
+%option__underline {
+  width: 0;
+  background: white;
+  height: $UNDERLINE-HEIGHT;
+
+  @include Transition($time: 500ms);
+}
+
+
+%option-main {
+  height: calc(100% - $UNDERLINE-HEIGHT);
+
+  @include X-Padding(.5rem);
+  @include GridLayout {
+    gap: 1rem;
+    grid-template-areas: "icon name";
+    grid-template-columns: $ICON-WIDTH calc(100% - $ICON-WIDTH);
+    align-items: center;
+  }
+}
+
+
+%option-main__icon {
+  grid-area: icon;
+  justify-self: center;
+  height: 80%;
+  @include Transition();
+}
+
+
+%option-main__name {
+  grid-area: name;
+  font-weight: bold;
+  color: white;
+
+  @include Move($y: $UNDERLINE-HEIGHT / 2);
+  @include Transition();
+}
+
+
+// SideNav Structure
+.side-nav { @extend %side-nav;
+  .options { @extend %options;
+    .option { @extend %option;
+      &__underline { @extend %option__underline; }
+      .option-main { @extend %option-main;
+        &__icon { @extend %option-main__icon; }
+        &__name { @extend %option-main__name; }
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{% extends 'collection/base.html' %}
+
+
+{% block content %}
+<form method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{ form }}
+  <input type="submit" value="Dodaj pliki">
+</form>
+{% endblock content %}

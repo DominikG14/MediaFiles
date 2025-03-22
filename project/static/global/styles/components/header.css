@@ -1,0 +1,65 @@
+.header {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.header__side-nav-button {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.header__logo {
+  height: 100%;
+}
+
+.header__name {
+  text-decoration: underline;
+  color: white;
+}
+.header__name font {
+  weight: bold;
+  variant: small-caps;
+  size: 2rem;
+}
+
+.header .top-nav {
+  height: 100%;
+  display: flex;
+}
+
+.header .top-nav .option {
+  height: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  transition: 500ms ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.header .top-nav .option:hover {
+  background: rgb(24, 24, 24);
+}
+.header .top-nav .option:hover .option__underline {
+  width: calc(100% + 2rem);
+}
+
+.header .top-nav .option__name {
+  color: white;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header .top-nav .option__underline {
+  width: 0;
+  height: 0.2rem;
+  background: white;
+  position: relative;
+  left: -1rem;
+  bottom: 0;
+  transition: 500ms ease-in-out;
+}

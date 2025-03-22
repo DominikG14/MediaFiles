@@ -1,0 +1,26 @@
+{% load static %}
+
+<header class="header">
+<button class="header__side-nav-button">
+  <img class="header__side-nav-button__icon" src="{% static 'photos/images/menu-icon.svg' %}" alt="">
+</button>
+
+<nav class="top-nav">
+  {% block top_nav %}
+    <a class="option" href="">
+      <div class="option__name">Galeria Zdjęć</div>
+      <div class="option__underline"></div>
+    </a>
+
+    <a class="option" href="">
+      <div class="option__name">Albumy</div>
+      <div class="option__underline"></div>
+    </a>
+
+    <a class="option" href="">
+      <div class="option__name">Dodaj Zdjęcia</div>
+      <div class="option__underline"></div>
+    </a>
+  {% endblock top_nav %}
+</nav>
+</header>

@@ -1,0 +1,92 @@
+@use "global_scss" as *;
+
+
+$UNDERLINE-HEIGHT: .2rem;
+$OPTIONS-SPACING: 1rem;
+
+
+%header {
+  @include X-Padding(1rem);
+  @include RowLayout{
+    gap: 1rem;
+    @include CenterRow($y: true);
+  }
+}
+
+
+%header__side-nav-button {
+  @include SquareShape(1.5rem);
+}
+
+
+%header__logo {
+  height: 100%;
+}
+
+
+%header__name {
+  font {
+    weight: bold;
+    variant: small-caps;
+    size: 2rem;
+  }
+
+  text-decoration: underline;
+  color: white;
+}
+
+
+%top-nav {
+  height: 100%;
+  @include RowLayout;
+}
+
+
+%option {
+  height: 100%;
+
+  @include X-Padding($OPTIONS-SPACING);
+  @include Transition($time: 500ms);
+  @include ColumnLayout {
+    justify-content: space-between;
+  }
+
+  &:hover {
+    background: rgb(24, 24, 24); 
+  }
+
+  &:hover &__underline {
+    width: calc(100% + 2*$OPTIONS-SPACING);
+  }
+}
+
+
+%option__name {
+  color: white;
+  flex: 1;
+  @include CenterText();
+}
+
+
+%option__underline {
+  width: 0;
+  height: $UNDERLINE-HEIGHT;
+  background: white;
+
+  @include Move($x: -$OPTIONS-SPACING);
+  @include Transition($time: 500ms);
+}
+
+
+.header { @extend %header;
+  &__side-nav-button { @extend %header__side-nav-button }
+  &__logo { @extend %header__logo }
+  &__name { @extend %header__name }
+
+  .top-nav { @extend %top-nav;
+    .option { @extend %option;
+      &__name { @extend %option__name }
+      &__underline { @extend %option__underline }
+    }
+  }
+}

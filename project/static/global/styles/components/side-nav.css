@@ -1,0 +1,53 @@
+.side-nav .options {
+  display: flex;
+  flex-direction: column;
+}
+
+.side-nav .options .option {
+  height: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: 500ms ease-in-out;
+}
+.side-nav .options .option:hover {
+  background: rgb(24, 24, 24);
+}
+.side-nav .options .option:hover .option__underline {
+  width: 100%;
+}
+
+.side-nav .options .option__underline {
+  width: 0;
+  background: white;
+  height: 0.2rem;
+  transition: 500ms ease-in-out;
+}
+
+.side-nav .options .option .option-main {
+  height: calc(100% - 0.2rem);
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-areas: "icon name";
+  grid-template-columns: 2rem calc(100% - 2rem);
+  align-items: center;
+}
+
+.side-nav .options .option .option-main__icon {
+  grid-area: icon;
+  justify-self: center;
+  height: 80%;
+  transition: 300ms ease-in-out;
+}
+
+.side-nav .options .option .option-main__name {
+  grid-area: name;
+  font-weight: bold;
+  color: white;
+  position: relative;
+  left: 0;
+  bottom: 0.1rem;
+  transition: 300ms ease-in-out;
+}
