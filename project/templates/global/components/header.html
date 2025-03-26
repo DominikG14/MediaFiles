@@ -7,20 +7,21 @@
 
 <nav class="top-nav">
   {% block top_nav %}
-    <a class="option" href="">
-      <div class="option__name">Galeria Zdjęć</div>
-      <div class="option__underline"></div>
-    </a>
+    {% include 'global/components/button.html' with 
+      text='Galeria Zdjęć'
+      href=''
+      modifiers='test'
+    %}
 
-    <a class="option" href="">
-      <div class="option__name">Albumy</div>
-      <div class="option__underline"></div>
-    </a>
+    {% include 'global/components/button.html' with 
+      text='Albumy'
+      href=''
+    %}
 
-    <a class="option" href="">
-      <div class="option__name">Dodaj Zdjęcia</div>
-      <div class="option__underline"></div>
-    </a>
+    {% include 'global/components/button.html' with 
+      text='Dodaj Zdjęcia'
+      href=''
+    %}
   {% endblock top_nav %}
 </nav>
 </header>

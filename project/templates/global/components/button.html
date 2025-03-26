@@ -1,0 +1,8 @@
+<a class="button
+{% for modifier in modifiers %}
+  button--{{ modifier }}
+{% endfor %}
+" href="{{ href }}">
+  <div class="button__name">{{ text }}</div>
+  <div class="button__underline"></div>
+</a>

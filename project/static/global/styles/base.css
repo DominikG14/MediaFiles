@@ -1,5 +1,5 @@
 :root {
-  --background-dark: var(--black-10);
+  --background-dark: var(--black);
   --font-dark: var(--white);
 }
 
@@ -9,7 +9,7 @@
 }
 
 :root {
-  --button-background-hover-dark: var(--black-30);
+  --button-background-hover-dark: var(--black-10);
   --button-underline-dark: var(--white);
 }
 
@@ -30,8 +30,8 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  color: white;
-  background: black;
+  color: var(--font);
+  background: var(--background);
   display: grid;
   grid-template-areas: "side-nav header" "side-nav main";
   grid-template-columns: 25rem;

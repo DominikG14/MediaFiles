@@ -14,7 +14,7 @@
 
 
 %base-dark {
-  --background-dark: var(--black-10);
+  --background-dark: var(--black);
   --font-dark: var(--white);
 }
 
@@ -31,7 +31,7 @@
 }
 
 %button-dark {
-  --button-background-hover-dark: var(--black-30);
+  --button-background-hover-dark: var(--black-10);
   --button-underline-dark: var(--white);
 }
 

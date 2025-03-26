@@ -1,0 +1,44 @@
+@use "global_scss" as *;
+
+
+$UNDERLINE-HEIGHT: .2rem;
+$OPTIONS-SPACING: 1rem;
+
+
+%button {
+  height: 100%;
+
+  @include X-Padding($OPTIONS-SPACING);
+  @include Transition($time: 500ms);
+  @include ColumnLayout {
+    justify-content: space-between;
+  }
+
+  &:hover {
+    background: var(--button-background-hover); 
+  }
+
+  &:hover &__underline {
+    width: calc(100% + 2*$OPTIONS-SPACING);
+  }
+}
+
+%button__name {
+  flex: 1;
+  @include CenterText();
+}
+
+%button__underline {
+  width: 0;
+  height: $UNDERLINE-HEIGHT;
+  background: var(--button-underline);
+
+  @include Move($x: -$OPTIONS-SPACING);
+  @include Transition($time: 500ms);
+}
+
+
+.button { @extend %button;
+  &__name { @extend %button__name; }
+  &__underline { @extend %button__underline; }
+}

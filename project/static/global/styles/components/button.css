@@ -1,0 +1,42 @@
+.button {
+  --button-background-hover-dark: var(--black-10);
+  --button-underline-dark: var(--white);
+}
+
+.button {
+  --button-background-hover: var(--button-background-hover-dark);
+  --button-underline: var(--button-underline-dark);
+}
+
+.button {
+  height: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  transition: 500ms ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.button:hover {
+  background: var(--button-background-hover);
+}
+.button:hover .button__underline {
+  width: calc(100% + 2rem);
+}
+
+.button__name {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button__underline {
+  width: 0;
+  height: 0.2rem;
+  background: var(--button-underline);
+  position: relative;
+  left: -1rem;
+  bottom: 0;
+  transition: 500ms ease-in-out;
+}
