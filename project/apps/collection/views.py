@@ -21,12 +21,6 @@ def upload(request: HttpRequest):
     })
 
 
-def test(request: HttpRequest):
+def display_all(request: HttpRequest):
     template = get_template(app=urls.app_name)
-
-    media_files = models.MediaFile.objects.filter(is_video=True)
-
-    for media in media_files:
-        media.get_EXIF()
-
     return render(request, template)

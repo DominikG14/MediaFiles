@@ -4,6 +4,11 @@
 $TOP-NAV-HEIGHT: 3.5rem;
 $SIDE-NAV-WIDTH: 25rem;
 
+
+:root {
+  @include globalRoot;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   color: white;

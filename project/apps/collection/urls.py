@@ -8,7 +8,7 @@ urlpatterns = []
 
 PATHS = [
     path('upload/', views.upload, name='upload'),
-    path('test/', views.test),
+    path('display/all', views.display_all, name='display_all'),
 ]
 
 REDIRECTS = [

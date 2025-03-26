@@ -1,3 +1,33 @@
+:root {
+  --background-dark: var(--black-10);
+  --font-dark: var(--white);
+}
+
+:root {
+  --background: var(--background-dark);
+  --font: var(--font-dark);
+}
+
+:root {
+  --button-background-hover-dark: var(--black-30);
+  --button-underline-dark: var(--white);
+}
+
+:root {
+  --button-background-hover: var(--button-background-hover-dark);
+  --button-underline: var(--button-underline-dark);
+}
+
+:root {
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
+  --black-10: hsl(0, 0%, 10%);
+  --black-30: hsl(0, 0%, 20%);
+  --black-50: hsl(0, 0%, 30%);
+  --black-70: hsl(0, 0%, 50%);
+  --black-90: hsl(0, 0%, 60%);
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   color: white;
