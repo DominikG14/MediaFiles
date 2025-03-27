@@ -24,7 +24,7 @@ def upload(request: HttpRequest):
 def display_all(request: HttpRequest):
     template = get_template(app=urls.app_name)
 
-    media_files = models.MediaFile.objects.filter(is_video=False)
+    media_files = models.MediaFile.objects.all()
 
     return render(request, template, {
         'media_files': media_files,

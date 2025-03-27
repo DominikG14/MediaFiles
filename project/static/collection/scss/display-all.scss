@@ -14,3 +14,87 @@
 }
 
 .media-cards { @extend %media-cards; }
+
+
+%media-card-dialog {
+  @include FillWholeSpace;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+%dialog-content {
+  $media-display-height: 90%;
+  $media-button-width: 4rem;
+
+  @include FillWholeSpace;
+  @include GridLayout{
+    grid: {
+      template-areas:
+      "button-left media-display button-right"
+      "media-other media-other media-other";
+
+      template-rows: $media-display-height;
+      template-columns: $media-button-width calc(100% - 2*$media-button-width);
+    }
+
+    @include GridAreas((
+      "button-left", 
+      "button-right", 
+      "media-display", 
+      "media-other"
+    ));
+  }
+}
+
+%media-button {
+  background: var(--background);
+}
+
+%media-display {
+  background: var(--background);
+  @include CenterContent;
+}
+
+%media-display__image {
+  object-fit: contain;
+  height: 100%;
+}
+
+%media-other {
+  background: orange;
+}
+
+%exit-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  background: pink;
+  @include SquareShape(2rem);
+}
+
+%exit-button__icon {
+
+}
+
+//TEST
+.media-other img {
+  width: 5rem;
+  height: 5rem;
+}
+
+.media-card-dialog { @extend %media-card-dialog; 
+  .dialog-content { @extend %dialog-content;
+    .media-button { @extend %media-button; }
+    .media-display { @extend %media-display; 
+      &__image { @extend %media-display__image; }
+    }
+    .media-other { @extend %media-other; }
+  }
+
+  .exit-button { @extend %exit-button; 
+    &__icon { @extend %exit-button__icon }
+  }
+}

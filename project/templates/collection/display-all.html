@@ -31,17 +31,47 @@
 {% block content %}
   <section class="media-cards">
     {% for media in media_files %}
-      {% include 'collection/components/media-card.html' with
-        src=media.file.url
-        alt=media.file.name
-      %}
+      {% if media.is_video %}
+        PUT_VIDEO_HERE
+      {% else %}
+        {% include 'collection/components/media-card.html' with
+          src=media.file.url
+          alt=media.file.name
+        %}
+      {% endif %}
     {% endfor %}
   </section>
 
-  <dialog class='media-card-dialog' id='media-card-dialog'>
-    {% include 'collection/components/media-card.html' with
-      src='/static/global/images/app-icon.png'
-    %}
-  </dialog>
+  <div class="media-card-dialog" id="media-card-dialog">
+    <div class="dialog-content">
+      <button class="button-left media-button media-button--left">
+        <img class="media-button__icon" src="" alt="">
+      </button>
 
+      <div class="media-display">
+        <img class="media-display__image" id="media-display__image" src="" alt="">
+      </div>
+
+      <button class="button-right media-button media-button--right">
+        <img class= src="media-button__icon" alt="">
+      </button>
+
+      <section class="media-other">
+        {% for media in media_files %}
+          {% if media.is_video %}
+            PUT_VIDEO_HERE
+          {% else %}
+            {% include 'collection/components/media-card.html' with
+              src=media.file.url
+              alt=media.file.name
+            %}
+          {% endif %}
+        {% endfor %}
+      </section>
+    </div>
+
+    <button class="exit-button" data-close-media-card-dialog>
+      <img class="exit-button__icon" src="" alt="">
+    </button>
+  </div>
 {% endblock content %}

@@ -5,3 +5,67 @@
   gap: 0.25rem;
   grid-template-columns: repeat(5, 1fr);
 }
+
+.media-card-dialog {
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.media-card-dialog .dialog-content {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-areas: "button-left media-display button-right" "media-other media-other media-other";
+  grid-template-rows: 90%;
+  grid-template-columns: 4rem calc(100% - 8rem);
+}
+.media-card-dialog .dialog-content > .button-left {
+  grid-area: button-left;
+}
+.media-card-dialog .dialog-content > .button-right {
+  grid-area: button-right;
+}
+.media-card-dialog .dialog-content > .media-display {
+  grid-area: media-display;
+}
+.media-card-dialog .dialog-content > .media-other {
+  grid-area: media-other;
+}
+
+.media-card-dialog .dialog-content .media-button {
+  background: var(--background);
+}
+
+.media-card-dialog .dialog-content .media-display {
+  background: var(--background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.media-card-dialog .dialog-content .media-display__image {
+  object-fit: contain;
+  height: 100%;
+}
+
+.media-card-dialog .dialog-content .media-other {
+  background: orange;
+}
+
+.media-card-dialog .exit-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: pink;
+  width: 2rem;
+  height: 2rem;
+}
+
+.media-other img {
+  width: 5rem;
+  height: 5rem;
+}
