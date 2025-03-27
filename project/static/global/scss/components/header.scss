@@ -2,11 +2,16 @@
 
 
 %header {
+  background: var(--background);
+  position: sticky;
+  top: 0;
+  
   @include X-Padding(1rem);
   @include RowLayout{
     gap: 1rem;
     @include CenterRow($y: true);
   }
+
 }
 
 

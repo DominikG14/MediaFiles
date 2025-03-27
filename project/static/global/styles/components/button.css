@@ -32,6 +32,9 @@
 .button--active .button__underline {
   width: calc(100% + 2rem);
 }
+.button--active:hover {
+  background: var(--button-background-active);
+}
 
 .button__name {
   flex: 1;

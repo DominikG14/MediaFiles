@@ -29,6 +29,10 @@ $UNDERLINE-WIDTH: calc(100% + 2*$OPTIONS-SPACING);
   .button__underline {
     width: $UNDERLINE-WIDTH;
   }
+
+  &:hover {
+    background: var(--button-background-active); // Overwrite default color change
+  }
 }
 
 %button__name {

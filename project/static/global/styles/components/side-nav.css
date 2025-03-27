@@ -1,3 +1,10 @@
+.side-nav {
+  background: var(--background);
+  position: sticky;
+  top: 0;
+  align-self: start;
+}
+
 .side-nav .options {
   display: flex;
   flex-direction: column;

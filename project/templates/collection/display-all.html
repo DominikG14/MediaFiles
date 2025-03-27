@@ -1,18 +1,19 @@
-{% extends 'global/base.html' %}
+{% extends 'collection/base.html' %}
+{% load static %}
 {% load string %}
 
 
-{% block base_static %}
-  {% block static %}
+{% block static %}
+  <link rel="stylesheet" href="{% static 'collection/styles/display-all.css' %}">
+  <script defer src="{% static 'collection/scripts/media-card-dialog.js' %}"></script>
   {% endblock static %}
-{% endblock base_static %}
 
 
 {% block top_nav %}
   {% include 'global/components/button.html' with 
     text='Galeria'
     href='/collection/display/all'
-    modifiers='active, lol'|split:', '
+    modifiers='active'|split:', '
   %}
 
   {% include 'global/components/button.html' with 
@@ -27,7 +28,20 @@
 {% endblock top_nav %}
 
 
-{% block base_content %}
-  {% block content %}
-  {% endblock content %}
-{% endblock base_content %}
+{% block content %}
+  <section class="media-cards">
+    {% for media in media_files %}
+      {% include 'collection/components/media-card.html' with
+        src=media.file.url
+        alt=media.file.name
+      %}
+    {% endfor %}
+  </section>
+
+  <dialog class='media-card-dialog' id='media-card-dialog'>
+    {% include 'collection/components/media-card.html' with
+      src='/static/global/images/app-icon.png'
+    %}
+  </dialog>
+
+{% endblock content %}

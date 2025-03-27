@@ -6,6 +6,10 @@ $ICON-WIDTH: 2rem;
 
 
 %side-nav {
+  background: var(--background);
+  position: sticky;
+  top: 0;
+  align-self: start;
 }
 
 
@@ -73,7 +77,6 @@ $ICON-WIDTH: 2rem;
 }
 
 
-// SideNav Structure
 .side-nav { @extend %side-nav;
   .options { @extend %options;
     .option { @extend %option;
