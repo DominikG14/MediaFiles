@@ -3,10 +3,7 @@
   --black: hsl(0, 0%, 0%);
   
   --black-10: hsl(0, 0%, 10%);
-  --black-30: hsl(0, 0%, 20%);
-  --black-50: hsl(0, 0%, 30%);
-  --black-70: hsl(0, 0%, 50%);
-  --black-90: hsl(0, 0%, 60%);
+  --black-30: hsl(0, 0%, 15%);
 
   @extend %base;
   @extend %button;
@@ -32,6 +29,7 @@
 
 %button-dark {
   --button-background-hover-dark: var(--black-10);
+  --button-background-active-dark: var(--black-30);
   --button-underline-dark: var(--white);
 }
 
@@ -39,5 +37,6 @@
   @extend %button-dark;
 
   --button-background-hover: var(--button-background-hover-dark);
+  --button-background-active: var(--button-background-active-dark);
   --button-underline: var(--button-underline-dark);
 }

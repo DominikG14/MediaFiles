@@ -1,10 +1,30 @@
 {% extends 'global/base.html' %}
+{% load string %}
 
 
 {% block base_static %}
   {% block static %}
   {% endblock static %}
 {% endblock base_static %}
+
+
+{% block top_nav %}
+  {% include 'global/components/button.html' with 
+    text='Galeria'
+    href='/collection/display/all'
+    modifiers='active, lol'|split:', '
+  %}
+
+  {% include 'global/components/button.html' with 
+    text='Albumy'
+    href=''
+  %}
+
+  {% include 'global/components/button.html' with 
+    text='Dodaj Zdjęcia / Filmy'
+    href='/collection/upload'
+  %}
+{% endblock top_nav %}
 
 
 {% block base_content %}

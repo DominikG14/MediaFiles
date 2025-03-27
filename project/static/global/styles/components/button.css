@@ -1,10 +1,12 @@
 .button {
   --button-background-hover-dark: var(--black-10);
+  --button-background-active-dark: var(--black-30);
   --button-underline-dark: var(--white);
 }
 
 .button {
   --button-background-hover: var(--button-background-hover-dark);
+  --button-background-active: var(--button-background-active-dark);
   --button-underline: var(--button-underline-dark);
 }
 
@@ -21,6 +23,13 @@
   background: var(--button-background-hover);
 }
 .button:hover .button__underline {
+  width: calc(100% + 2rem);
+}
+
+.button--active {
+  background: var(--button-background-active);
+}
+.button--active .button__underline {
   width: calc(100% + 2rem);
 }
 

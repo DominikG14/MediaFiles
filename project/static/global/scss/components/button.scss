@@ -1,9 +1,9 @@
 @use "global_scss" as *;
 
 
-$UNDERLINE-HEIGHT: .2rem;
 $OPTIONS-SPACING: 1rem;
-
+$UNDERLINE-HEIGHT: .2rem;
+$UNDERLINE-WIDTH: calc(100% + 2*$OPTIONS-SPACING);
 
 %button {
   height: 100%;
@@ -19,7 +19,15 @@ $OPTIONS-SPACING: 1rem;
   }
 
   &:hover &__underline {
-    width: calc(100% + 2*$OPTIONS-SPACING);
+    width: $UNDERLINE-WIDTH;
+  }
+}
+
+%button--active {
+  background: var(--button-background-active); 
+
+  .button__underline {
+    width: $UNDERLINE-WIDTH;
   }
 }
 
@@ -41,4 +49,6 @@ $OPTIONS-SPACING: 1rem;
 .button { @extend %button;
   &__name { @extend %button__name; }
   &__underline { @extend %button__underline; }
+
+  &--active { @extend %button--active; }
 }
