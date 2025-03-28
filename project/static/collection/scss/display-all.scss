@@ -57,6 +57,10 @@
   }
 }
 
+%media-button__icon {
+  pointer-events: none;
+}
+
 %media-display {
   background: var(--background);
   @include CenterContent;
@@ -71,17 +75,19 @@
   @include RowLayout;
   height: 100%;
   overflow-x: scroll;
+  background: var(--button-background-hover);
 }
 
 %exit-button {
   position: absolute;
   top: 0;
   right: 0;
-  @include SquareShape(2rem);
+  @include CircleShape(2rem);
+  background: var(--background);
 }
 
 %exit-button__icon {
-
+  pointer-events: none;
 }
 
 %media-other__image {
@@ -95,7 +101,9 @@
 
 .media-card-dialog { @extend %media-card-dialog; 
   .dialog-content { @extend %dialog-content;
-    .media-button { @extend %media-button; }
+    .media-button { @extend %media-button; 
+      &__icon { @extend %media-button__icon; }
+    }
     .media-display { @extend %media-display; 
       &__image { @extend %media-display__image; }
     }

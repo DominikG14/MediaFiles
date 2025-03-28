@@ -37,6 +37,7 @@
         {% include 'collection/components/media-card.html' with
           src=media.file.url
           alt=media.file.name
+          num=forloop.counter
         %}
       {% endif %}
     {% endfor %}
@@ -44,7 +45,7 @@
 
   <div class="media-card-dialog" id="media-card-dialog">
     <div class="dialog-content">
-      <button class="button-left media-button media-button--left">
+      <button class="button-left media-button media-button--left" data-change-media-left>
         <img class="media-button__icon" src="{% static 'global/images/arrow-left-icon.svg' %}" alt="">
       </button>
 
@@ -52,7 +53,7 @@
         <img class="media-display__image" id="media-display__image">
       </div>
 
-      <button class="button-right media-button media-button--right">
+      <button class="button-right media-button media-button--right" data-change-media-right>
         <img class="media-button__icon" src="{% static 'global/images/arrow-right-icon.svg' %}" alt="">
       </button>
 
@@ -65,14 +66,15 @@
               src=media.file.url
               alt=media.file.name
               class='media-other__image'|split:', '
+              num=forloop.counter
             %}
           {% endif %}
         {% endfor %}
       </section>
     </div>
 
-    <button class="exit-button">
-      <img class="exit-button__icon" src="{% static 'global/images/exit-icon.svg' %}" data-close-media-card-dialog>
+    <button class="exit-button" data-close-media-card-dialog>
+      <img class="exit-button__icon" src="{% static 'global/images/exit-icon.svg' %}">
     </button>
   </div>
 {% endblock content %}

@@ -44,6 +44,10 @@
   background: var(--button-background-hover);
 }
 
+.media-card-dialog .dialog-content .media-button__icon {
+  pointer-events: none;
+}
+
 .media-card-dialog .dialog-content .media-display {
   background: var(--background);
   display: flex;
@@ -60,6 +64,7 @@
   display: flex;
   height: 100%;
   overflow-x: scroll;
+  background: var(--button-background-hover);
 }
 
 .media-card-dialog .exit-button {
@@ -68,6 +73,12 @@
   right: 0;
   width: 2rem;
   height: 2rem;
+  border-radius: 2rem;
+  background: var(--background);
+}
+
+.media-card-dialog .exit-button__icon {
+  pointer-events: none;
 }
 
 .media-card-dialog .dialog-content .media-other__image {
