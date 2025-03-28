@@ -1,6 +1,5 @@
 .media-card {
   aspect-ratio: 1/1;
-  box-shadow: 1px 1px 0.5rem black;
   object-fit: cover;
   background-size: cover;
   object-position: center;
@@ -10,4 +9,5 @@
 .media-card:hover {
   transform: scale(1.01);
   cursor: pointer;
+  box-shadow: 1px 1px 0.5rem black;
 }

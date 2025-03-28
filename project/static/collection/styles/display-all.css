@@ -20,7 +20,7 @@
   height: 100%;
   display: grid;
   grid-template-areas: "button-left media-display button-right" "media-other media-other media-other";
-  grid-template-rows: 90%;
+  grid-template-rows: 90% 10%;
   grid-template-columns: 4rem calc(100% - 8rem);
 }
 .media-card-dialog .dialog-content > .button-left {
@@ -38,6 +38,10 @@
 
 .media-card-dialog .dialog-content .media-button {
   background: var(--background);
+  transition: 300ms ease-in-out;
+}
+.media-card-dialog .dialog-content .media-button:hover {
+  background: var(--button-background-hover);
 }
 
 .media-card-dialog .dialog-content .media-display {
@@ -49,23 +53,27 @@
 
 .media-card-dialog .dialog-content .media-display__image {
   object-fit: contain;
-  height: 100%;
+  max-height: 100%;
 }
 
 .media-card-dialog .dialog-content .media-other {
-  background: orange;
+  display: flex;
+  height: 100%;
+  overflow-x: scroll;
 }
 
 .media-card-dialog .exit-button {
   position: absolute;
   top: 0;
   right: 0;
-  background: pink;
   width: 2rem;
   height: 2rem;
 }
 
-.media-other img {
-  width: 5rem;
-  height: 5rem;
+.media-card-dialog .dialog-content .media-other__image {
+  filter: brightness(0.5);
+}
+.media-card-dialog .dialog-content .media-other__image:hover {
+  transform: none;
+  filter: none;
 }

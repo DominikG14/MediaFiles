@@ -35,7 +35,7 @@
       "button-left media-display button-right"
       "media-other media-other media-other";
 
-      template-rows: $media-display-height;
+      template-rows: $media-display-height calc(100% - $media-display-height);
       template-columns: $media-button-width calc(100% - 2*$media-button-width);
     }
 
@@ -50,6 +50,11 @@
 
 %media-button {
   background: var(--background);
+  @include Transition();
+
+  &:hover {
+    background: var(--button-background-hover);
+  }
 }
 
 %media-display {
@@ -59,19 +64,19 @@
 
 %media-display__image {
   object-fit: contain;
-  height: 100%;
+  max-height: 100%;
 }
 
 %media-other {
-  background: orange;
+  @include RowLayout;
+  height: 100%;
+  overflow-x: scroll;
 }
 
 %exit-button {
   position: absolute;
   top: 0;
   right: 0;
-
-  background: pink;
   @include SquareShape(2rem);
 }
 
@@ -79,10 +84,13 @@
 
 }
 
-//TEST
-.media-other img {
-  width: 5rem;
-  height: 5rem;
+%media-other__image {
+  filter: brightness(0.5);
+
+  &:hover {
+    transform: none;
+    filter: none;
+  }
 }
 
 .media-card-dialog { @extend %media-card-dialog; 
@@ -91,7 +99,9 @@
     .media-display { @extend %media-display; 
       &__image { @extend %media-display__image; }
     }
-    .media-other { @extend %media-other; }
+    .media-other { @extend %media-other; 
+      &__image { @extend %media-other__image; }
+    }
   }
 
   .exit-button { @extend %exit-button; 

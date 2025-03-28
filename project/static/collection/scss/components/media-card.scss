@@ -5,7 +5,6 @@
 
 %media-card {
   aspect-ratio: 1 / 1;
-  @include Highlight-Box($color: black);
   @include CoverBackgroundImage();
   @include CenterBackgroundImage();
   @include Transition(200ms);
@@ -13,6 +12,7 @@
   &:hover {
     transform: scale(1.01);
     cursor: pointer;
+    @include Highlight-Box($color: black);
   }
 }
 

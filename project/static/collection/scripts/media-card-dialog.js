@@ -12,6 +12,7 @@ document.addEventListener('click', event => {
 document.addEventListener('click', event => {
   if(event.target.hasAttribute("data-close-media-card-dialog")){
     const dialog = document.querySelector('#media-card-dialog');
+    console.log('Works?');
     dialog.style.display = 'none';
   }
 });

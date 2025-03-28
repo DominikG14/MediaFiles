@@ -45,15 +45,15 @@
   <div class="media-card-dialog" id="media-card-dialog">
     <div class="dialog-content">
       <button class="button-left media-button media-button--left">
-        <img class="media-button__icon" src="" alt="">
+        <img class="media-button__icon" src="{% static 'global/images/arrow-left-icon.svg' %}" alt="">
       </button>
 
       <div class="media-display">
-        <img class="media-display__image" id="media-display__image" src="" alt="">
+        <img class="media-display__image" id="media-display__image">
       </div>
 
       <button class="button-right media-button media-button--right">
-        <img class= src="media-button__icon" alt="">
+        <img class="media-button__icon" src="{% static 'global/images/arrow-right-icon.svg' %}" alt="">
       </button>
 
       <section class="media-other">
@@ -64,14 +64,15 @@
             {% include 'collection/components/media-card.html' with
               src=media.file.url
               alt=media.file.name
+              class='media-other__image'|split:', '
             %}
           {% endif %}
         {% endfor %}
       </section>
     </div>
 
-    <button class="exit-button" data-close-media-card-dialog>
-      <img class="exit-button__icon" src="" alt="">
+    <button class="exit-button">
+      <img class="exit-button__icon" src="{% static 'global/images/exit-icon.svg' %}" data-close-media-card-dialog>
     </button>
   </div>
 {% endblock content %}
