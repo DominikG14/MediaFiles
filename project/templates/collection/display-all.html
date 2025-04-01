@@ -1,6 +1,7 @@
 {% extends 'collection/base.html' %}
 {% load static %}
 {% load string %}
+{% load collection_components %}
 
 
 {% block static %}
@@ -32,9 +33,8 @@
   <section class="media-cards">
     {% for media in media_files %}
       {% if media.is_video %}
-        PUT_VIDEO_HERE
       {% else %}
-        {% include 'collection/components/media-card.html' with
+        {% media_card 
           src=media.file.url
           alt=media.file.name
           num=forloop.counter
@@ -62,11 +62,10 @@
           {% if media.is_video %}
             PUT_VIDEO_HERE
           {% else %}
-            {% include 'collection/components/media-card.html' with
+            {% media_card 
               src=media.file.url
               alt=media.file.name
-              class='media-other__image'|split:', '
-              num=forloop.counter
+              class_list="['media-other__image']" 
             %}
           {% endif %}
         {% endfor %}

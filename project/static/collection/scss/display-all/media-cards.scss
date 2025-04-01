@@ -1,0 +1,14 @@
+@use "global_scss" as *;
+@use "collection_scss" as *;
+
+
+%media-cards {
+  $gap-between-photos: .25rem;
+
+  width: 100%;
+  padding: $gap-between-photos;
+  @include GridLayout{
+    gap: $gap-between-photos;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

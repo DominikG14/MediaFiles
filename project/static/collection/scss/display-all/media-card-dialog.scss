@@ -1,0 +1,86 @@
+@use "global_scss" as *;
+@use "collection_scss" as *;
+
+
+%media-card-dialog {
+  @include FillWholeSpace;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+%dialog-content {
+  $media-display-height: 90%;
+  $media-button-width: 4rem;
+
+  @include FillWholeSpace;
+  @include GridLayout{
+    grid: {
+      template-areas:
+      "button-left media-display button-right"
+      "media-other media-other media-other";
+
+      template-rows: $media-display-height calc(100% - $media-display-height);
+      template-columns: $media-button-width calc(100% - 2*$media-button-width);
+    }
+
+    @include GridAreas((
+      "button-left", 
+      "button-right", 
+      "media-display", 
+      "media-other"
+    ));
+  }
+}
+
+%media-button {
+  background: var(--background);
+  @include Transition();
+
+  &:hover {
+    background: var(--button-background-hover);
+  }
+}
+
+%media-button__icon {
+  pointer-events: none;
+}
+
+%media-display {
+  background: var(--background);
+  @include CenterContent;
+}
+
+%media-display__image {
+  object-fit: contain;
+  max-height: 100%;
+}
+
+%media-other {
+  @include RowLayout;
+  height: 100%;
+  overflow-x: scroll;
+  background: var(--button-background-hover);
+}
+
+%exit-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  @include CircleShape(2rem);
+  background: var(--background);
+}
+
+%exit-button__icon {
+  pointer-events: none;
+}
+
+%media-other__image {
+  filter: brightness(0.5);
+
+  &:hover {
+    transform: none;
+    filter: none;
+  }
+}
