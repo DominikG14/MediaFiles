@@ -14,16 +14,13 @@
 
 }
 
-
 %header__side-nav-button {
   @include SquareShape(1.5rem);
 }
 
-
 %header__logo {
   height: 100%;
 }
-
 
 %header__name {
   font {
@@ -35,7 +32,6 @@
   text-decoration: underline;
   color: white;
 }
-
 
 %top-nav {
   height: 100%;

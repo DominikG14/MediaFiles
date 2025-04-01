@@ -1,7 +1,8 @@
 {% load string %}
 
 <a class="button
-{% for modifier in modifiers %} button--{{ modifier }}{% endfor %}"
+  {% for modifier in modifiers_list %} button--{{ modifier }} {% endfor %}
+  {% for class in class_list %} {{ class }} {% endfor %}"
 href="{{ href }}">
   <div class="button__name">{{ text }}</div>
   <div class="button__underline"></div>

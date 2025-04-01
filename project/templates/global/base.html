@@ -1,4 +1,6 @@
 {% load static %}
+{% load global_components %}
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -25,19 +27,20 @@
     
     <nav class="top-nav">
       {% block top_nav %}
-        {% include 'global/components/button.html' with 
+        {% button 
           text='Galeria'
           href='/collection/display/all'
+          modifiers_list="['gallery']"
         %}
-    
-        {% include 'global/components/button.html' with 
+        {% button 
           text='Albumy'
           href=''
+          modifiers_list="['albums']"
         %}
-    
-        {% include 'global/components/button.html' with 
+        {% button 
           text='Dodaj Zdjęcia / Filmy'
           href='/collection/upload'
+          modifiers_list="['upload']"
         %}
       {% endblock top_nav %}
     </nav>

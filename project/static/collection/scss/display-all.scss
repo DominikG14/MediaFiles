@@ -1,5 +1,6 @@
 @use "global_scss" as *;
 @use "collection_scss" as *;
+@use "display-all_scss" as *;
 
 
 .media-cards { @extend %media-cards; }

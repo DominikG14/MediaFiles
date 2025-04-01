@@ -1,6 +1,5 @@
 {% extends 'collection/base.html' %}
 {% load static %}
-{% load string %}
 {% load collection_components %}
 
 
@@ -10,7 +9,7 @@
   {% endblock static %}
 
 
-{% block top_nav %}
+{% comment %} {% block top_nav %}
   {% include 'global/components/button.html' with 
     text='Galeria'
     href='/collection/display/all'
@@ -26,7 +25,7 @@
     text='Dodaj Zdjęcia / Filmy'
     href='/collection/upload'
   %}
-{% endblock top_nav %}
+{% endblock top_nav %} {% endcomment %}
 
 
 {% block content %}

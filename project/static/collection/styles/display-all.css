@@ -1,18 +1,90 @@
-/* Error: The target selector was not found.
- * Use "@extend %media-cards !optional" to avoid this error.
- *   ,
- * 5 | .media-cards { @extend %media-cards; }
- *   |                ^^^^^^^^^^^^^^^^^^^^
- *   '
- *   project\static\collection\scss\display-all.scss 5:16  root stylesheet */
+.media-cards {
+  width: 100%;
+  padding: 0.25rem;
+  display: grid;
+  gap: 0.25rem;
+  grid-template-columns: repeat(4, 1fr);
+}
 
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: 'Error: The target selector was not found.\aUse "@extend %media-cards !optional" to avoid this error.\a   \2577 \a 5 \2502  .media-cards { @extend %media-cards; }\a   \2502                 ^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   project\\static\\collection\\scss\\display-all.scss 5:16  root stylesheet';
+.media-card-dialog {
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.media-card-dialog .dialog-content {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-areas: "button-left media-display button-right" "media-other media-other media-other";
+  grid-template-rows: 90% 10%;
+  grid-template-columns: 4rem calc(100% - 8rem);
+}
+.media-card-dialog .dialog-content > .button-left {
+  grid-area: button-left;
+}
+.media-card-dialog .dialog-content > .button-right {
+  grid-area: button-right;
+}
+.media-card-dialog .dialog-content > .media-display {
+  grid-area: media-display;
+}
+.media-card-dialog .dialog-content > .media-other {
+  grid-area: media-other;
+}
+
+.media-card-dialog .dialog-content .media-button {
+  background: var(--background);
+  transition: 300ms ease-in-out;
+}
+.media-card-dialog .dialog-content .media-button:hover {
+  background: var(--button-background-hover);
+}
+
+.media-card-dialog .dialog-content .media-button__icon {
+  pointer-events: none;
+}
+
+.media-card-dialog .dialog-content .media-display {
+  background: var(--background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.media-card-dialog .dialog-content .media-display__image {
+  object-fit: contain;
+  max-height: 100%;
+}
+
+.media-card-dialog .dialog-content .media-other {
+  display: flex;
+  height: 100%;
+  overflow-x: scroll;
+  background: var(--button-background-hover);
+}
+
+.media-card-dialog .exit-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 2rem;
+  background: var(--background);
+}
+
+.media-card-dialog .exit-button__icon {
+  pointer-events: none;
+}
+
+.media-card-dialog .dialog-content .media-other__image {
+  filter: brightness(0.5);
+}
+.media-card-dialog .dialog-content .media-other__image:hover {
+  transform: none;
+  filter: none;
 }
